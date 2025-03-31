@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.employeemanagement.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_update_employee"
+            app:destination="@id/nav_update_employee" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_employee"
+        android:name="com.example.employeemanagement.ui.employee.EmployeeFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_employee" >
+        <action
+            android:id="@+id/action_nav_employee_to_nav_update_employee"
+            app:destination="@id/nav_update_employee" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.example.employeemanagement.ui.setting.SettingFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/nav_role"
+        android:name="com.example.employeemanagement.ui.role.RoleFragment"
+        android:label="RoleFragment"
+        tools:layout="@layout/fragment_role">
+        <action
+            android:id="@+id/action_nav_role_to_nav_update_role"
+            app:destination="@id/nav_update_role" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_add_employee"
+        android:name="com.example.employeemanagement.ui.employee.AddEmployeeFragment"
+        android:label="RoleFragment"
+        tools:layout="@layout/fragment_add_employee"/>
+
+    <fragment
+        android:id="@+id/nav_add_role"
+        android:name="com.example.employeemanagement.ui.role.AddRoleFragment"
+        android:label="AddRoleFragment"
+        tools:layout="@layout/fragment_add_role"/>
+
+    <fragment
+        android:id="@+id/nav_update_employee"
+        android:name="com.example.employeemanagement.ui.employee.UpdateEmployeeFragment"
+        android:label="FragmentUpdateEmployee"
+        tools:layout="@layout/fragment_update_employee">
+        <argument
+            android:name="employee"
+            app:argType="com.example.employeemanagement.data.employee.Employee"
+            app:nullable="false"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_update_role"
+        android:name="com.example.employeemanagement.ui.role.UpdateRoleFragment"
+        android:label="UpdateRoleFragment"
+        tools:layout="@layout/fragment_update_role">
+        <argument
+            android:name="role"
+            app:argType="com.example.employeemanagement.data.role.Role"
+            app:nullable="false"
+            />
+    </fragment>
+
+</navigation>
